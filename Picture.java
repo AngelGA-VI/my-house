@@ -16,6 +16,7 @@ public class Picture
     private Triangle roof;
     private Circle sun;
     private Circle moon;
+    private Square cesped;
     /**
      * Constructor for objects of class Picture
      */
@@ -41,7 +42,14 @@ public class Picture
         window.moveVertical(40);
         window.changeSize(40);
         window.makeVisible();
-
+        
+        cesped = new Square();
+        cesped.changeColor("green");
+        cesped.moveHorizontal(-320);
+        cesped.moveVertical(140);
+        cesped.changeSize(600);
+        cesped.makeVisible();
+        
         roof = new Triangle();  
         roof.changeSize(60, 180);
         roof.moveHorizontal(20);
@@ -55,12 +63,17 @@ public class Picture
         sun.changeSize(80);
         sun.makeVisible();
         
+        // ha cambiado la luna de sitio, mas a la izquierza de tamaño y de color.
         moon = new Circle();
-        moon.makeVisible();
         moon.changeColor("magenta");
         moon.moveHorizontal(-180);
         moon.changeSize(50);
-        // ha cambiado la luna de sitio, mas a la izquierza de tamaño y de color.
+        moon.makeInvisible();
+        
+        //Movimiento del sol y aparicion de la luna.
+        sun.slowMoveVertical(180);
+        moon.makeVisible();
+        
     }
 
     /**
