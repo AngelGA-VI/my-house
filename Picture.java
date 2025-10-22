@@ -24,7 +24,7 @@ public class Picture
     {
         // nothing to do... instance variables are automatically set to null
     }
-
+    
     /**
      * Draw this picture.
      */
@@ -103,4 +103,14 @@ public class Picture
             sun.changeColor("yellow");
         }
     }
+    
+    public void amanecer()
+    {
+        moon.makeInvisible();
+        sun.makeVisible();
+        for (int i = 0; i < 60; i++) {
+        sun.slowMoveVertical(-2);
+    }
 }
+}
+    
